@@ -1,0 +1,32 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nanum+Gothic&display=swap');
+</style>
+/* !!!font-family: 'Montserrat', sans-serif;*/
+
+/* The asterisk (the star) means "all", a css rule with the asterisk will individually 
+		apply what you write with every single individual tag */
+*{
+	box-sizing: border-box;
+}
+
+/* If you want to write css rules for an entire section you write that tag's name */
+body{
+	background-color: #222;
+	color: #fff;
+/* you can add padding and margins in a specific way to make the text/content go from
+	edge to edge on the page */
+	padding: 0px;
+	margin: 0px;
+}
+
+/* To make an id just make the hashtag and THEN the name of the tag */
+/* You can only use an id once in your entire code */
+#specialtext{
+	color: #ff0072;
+}
+
+/* To make a class you use a dot (.) instead of a hashtag */
+/* Classes are made to be used more than once and give multiple things the same style */
+.highlight{
+	background-color: #dadb0d;
+}
