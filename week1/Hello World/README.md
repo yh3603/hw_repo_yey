@@ -1,1 +1,0 @@
-Omg hello! I FINALLY understand how to do all of this stuff!
