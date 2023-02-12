@@ -1,1 +1,1 @@
-# week2_2
+# week2_thursHW
