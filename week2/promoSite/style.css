@@ -5,7 +5,7 @@
 
 /* The asterisk (the star) means "all", a css rule with the asterisk will individually 
 		apply what you write with every single individual tag */
-*{
+{
 	box-sizing: border-box;
 }
 
