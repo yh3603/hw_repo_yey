@@ -55,18 +55,6 @@ p, a {
 	text-indent: 60px;
 }
 
-/*.row {
-	content: "";
-	clear: both;
-	display: table;
-}
-
-.column {
-	float: left;
-	width: 23%;
-	padding: 5px;
-}*/
-
 div {
 	position: relative;
 	text-align: center;
@@ -95,11 +83,6 @@ div p {
 	text-indent: 0;
 	margin-bottom: 5px;
 }
-/*
-div div p p {
-	position: absolute;
-	padding-top: 0;
-}*/
 
 .dates {
 	position: absolute;
