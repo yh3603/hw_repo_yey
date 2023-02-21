@@ -28,3 +28,6 @@ What I need to learn:
 	<li>How to make a button that downloads something</li>
 </ul>
 
+<a href="https://yh3603.github.io/hw_repo_yey/midterm/">
+First page wireframe/layout
+</a>
