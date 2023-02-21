@@ -1,6 +1,8 @@
 # Midterm Website
 
-Wireframe:
+<a href="https://docs.google.com/presentation/d/1F9aRKwqtmHY3jQBJIR-CEzw950m6gLVSBQHpDqA2G8w/edit?usp=sharing">
+Wireframe
+</a>
 
 Theme:
 <ul>
@@ -23,5 +25,6 @@ What I will do:
 What I need to learn:
 <ul>
 	<li>How to make new pages within the website</li>
+	<li>How to make a button that downloads something</li>
 </ul>
 

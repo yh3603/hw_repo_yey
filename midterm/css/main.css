@@ -1,26 +1,134 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nanum+Gothic&display=swap');
+</style>
+
 * {
 	box-sizing: border-box;
 }
 
-.clearfix::after {
-	display: block;
-	clear: both; /*both means left and right*/
-	/* This ensures cross browser compatability*/
+/*.clearfix::after {
+	display: flex;
+	clear: both;
 	height: 0;
 	font-size: 0;
 	content: '';
-	/* Super paranoid mode is below */
 	visibility: hidden;
-}
+}*/
 
 html, body {
+	min-height: 100vh;
 	margin: 0;
+	background-color: #09182eff;
+	display: flex;
+	flex-direction: column;
 }
 
-div, header, section, article, aside, footer, main {
+div, main {
 	min-height: 100px;
-	background-color: rgba(0, 100, 255, 0.2);
+	color: #f5f5f5;
 }
 
+header {
+	width: 100%;
+	height: 50px;
+	background-color: rgba(0, 100, 255, 0.2);
+	margin-bottom: 10px;
+}
 
+footer {
+	margin-top: auto;
+	height: 50px;
+	background-color: rgba(0, 100, 255, 0.2);
+	width: 100%;
+}
 
+.topLine {
+	width: 500px;
+	height: 2px;
+	margin-right: 0px;
+	color: #00d6bc;
+}
+
+.bottomLine {
+	width: 1000px;
+	height: 2px;
+	margin-left: 0px;
+	color: #00d6bc;
+}
+
+h1 {
+	font-size: 40px;
+	float: right;
+	margin-right: 600px;
+	margin-top: 200px;
+}
+
+h1 p {
+	margin: 0 auto;
+	font-size: 60px;
+	color: #00d6bc;
+}
+
+.outerCircle {
+	position: relative;
+	height: 500px;
+  	width: 500px;
+  	background-color: #00d6bc;
+  	border-radius: 50%;
+  	float: left;
+  	margin-left: 50px;
+	margin-top: 30px;
+}
+
+.innerCircle {
+	position: absolute;
+	height: 400px;
+	width: 400px;
+	background-color: #09182eff;
+	border-radius: 50%;
+	float: left;
+	margin-top: 50px;
+	margin-left: -450px;
+	margin-top: 80px;
+}
+
+header nav {
+  	display: inline-flex;
+  	float: right; 
+  	margin-right: 0px;
+}
+
+header nav ul {
+  	list-style-type: none;
+  	text-align: center;
+  	padding: 0;
+  	margin: 0;
+  	background-color: rgba(0, 100, 255, 0.2);
+}
+
+nav li {
+  	height: 20px;
+  	line-height: 20px;
+  	width: 120px;
+  	display: inline-block;
+ /* text-align: center*/
+}
+
+nav a {
+	font-size: 10px;
+  	text-decoration: none;
+  	color: #f5f5f5;
+  	display: block;
+  	text-align: center;
+  	transition: all 1s;
+}
+
+nav a:hover {
+  	background-color: rgba(0, 100, 255, 0.2);
+  	color: #f5f5f5;
+}
+
+nav a.active {
+  	background-color: #f5f5f5;
+  	color: white;
+}
