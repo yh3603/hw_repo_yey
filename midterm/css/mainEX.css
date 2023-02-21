@@ -1,0 +1,38 @@
+/* Reset/Global CSS declarations to get rid of (reset) browser defaults for some tags */
+/* This is because the browser has like a default margin, and if you wanted to put a picture 
+in it would fuck it up */
+
+/* So get rid of whitespace around the entire page caused by browser default*/
+
+html, body {
+	margin: 0;
+
+}
+
+* {
+/* Below will save you from a bunch of math. OHHH I remember this is what Professor Effie 
+talked about with the border-box issue*/
+	box-sizing: border-box;
+}
+
+/* When you float items inside a parent tag, you will need a clearfix on the parent
+element. This makes sure it wraps around all the floated items.*/
+.clearfix::after {
+	display: block;
+	clear: both; /*both means left and right*/
+	/* This ensures cross browser compatability*/
+	height: 0;
+	font-size: 0;
+	content: '';
+	/* Super paranoid mode is below */
+	visibility: hidden;
+}
+
+div, header, section, article, aside, footer, main {
+	min-height: 100px;
+	/* RGBA */
+	background-color: rgba(0, 100, 255, 0.2);
+	/* ^^ It's pretty smart to put the background on it so I can see what's the parent
+	and what's the child where and stuff */
+}
+
