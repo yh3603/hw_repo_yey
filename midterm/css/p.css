@@ -19,9 +19,31 @@ header, footer{
 	display: block;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 
 /*Phone Media Query Section*/
 @media (min-width:320px) { 
+
+.imgContainer {
+	display: flex;
+	width: 100vw;
+	height: auto;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: space-between;
+}
+
+.imgPlaceholder {
+	width: 100%;
+	height: auto;
+	background-color: rgba(0,214,188,0.5);
+}
 
 /*///////////////////I'm starting new code here////////////////*/
 /*nav section css*/
@@ -90,63 +112,18 @@ hr.bottomLine {
 	width: 100vw;
 	height: auto;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	align-content: space-around;
-}
-
-div.circles {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 500px;
- 	width: 500px;
- 	margin: 50px;
-}
-
-.outerCircle {
-	position: relative;
-	height: 500px;
- 	width: 500px;
- 	background-color: #00d6bc;
- 	border-radius: 50%;
- 	padding: 10px;
-}
-
-.innerCircle {
-	position: absolute;
-	height: 400px;
-	width: 400px;
-	background-color: #09182eff;
-	border-radius: 50%;
- 	text-align: center;
-}
-/* Can't figure out how to scale the circle as media queries change*/
-
-/*Hi, my name is Yoojin Hong section*/
-.nameContainer {
-	display: flex;
-/*	width: 100vw;*/
-	height: auto;
-	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	align-content: space-around;
 }
 
 h1 {
-	font-size: 40px;
-	height: 20px;
-	text-align: center;
-}
-
-p.name {
 	margin-top: 0;
+	text-align: left;
 	padding-bottom: 50px;
 	font-size: 60px;
 	color: #00d6bc;
 }
-/*END name section END*/
 }
 /*END phone media query section END*/
 
@@ -218,61 +195,10 @@ hr.bottomLine {
 	border-color: #00d6bc;
 }
 
-.mainContainer {
-	display: flex;
-	width: 100vw;
-	height: auto;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	align-content: space-around;
-}
-
-div.circles {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 500px;
- 	width: 500px;
- 	margin: 50px;
-}
-
-.outerCircle {
-	position: relative;
-	height: 500px;
- 	width: 500px;
- 	background-color: #00d6bc;
- 	border-radius: 50%;
-}
-
-.innerCircle {
-	position: absolute;
-	height: 400px;
-	width: 400px;
-	background-color: #09182eff;
-	border-radius: 50%;
- 	text-align: center;
-}
-
-/*Hi, my name is Yoojin Hong section*/
-.nameContainer {
-	display: flex;
-/*	width: 100vw;*/
-	height: auto;
-	flex-direction: column;
-	justify-content: center;
-	align-items: left;
-	align-content: space-around;
-}
-
 h1 {
-	font-size: 40px;
-	height: 20px;
+	padding: 50px;
+	margin: auto;
 	text-align: left;
-}
-
-h1 p {
-	margin: 0 auto;
 	font-size: 60px;
 	color: #00d6bc;
 }
