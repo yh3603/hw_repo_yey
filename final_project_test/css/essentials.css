@@ -504,16 +504,6 @@ p{
 }
 
 /*------------Stuff for each page--------------*/
-.foodTitle{
-  color: #004E66;
-  font-size: 34px;
-  text-align: center;
-  width: 75%;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 15px;
-}
-
 img{
   width: auto;
   height: 49%;
