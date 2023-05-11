@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cooking Website FP</title>
+  <link rel="stylesheet" type="text/css" href="../css/contact.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam&family=Edu+TAS+Beginner:wght@600&family=Ysabeau&display=swap">
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      let rightPage = document.getElementById("rightPage1");
+      let leftPage = document.getElementById("leftPage");
+      rightPage.addEventListener("click", flipRightPage);
+      // leftPage.addEventListener("click", flipLeftPage);
+      
+      function flipRightPage(){
+        if (!rightPage.classList.contains("flipCheck")){
+          rightPage.style.transform = "rotateY(-180deg)";
+          rightPage.classList.add("flipCheck");
+          leftPage.style.pointerEvents = "none";
+          rightPage.addEventListener("transitionend", hideTheFront);
+          console.log(rightPage.classList);
+        }else{
+          rightPage.style.transform = "none";
+          rightPage.classList.remove("flipCheck");
+          rightPage.addEventListener("transitionend", showTheFront);
+          console.log(rightPage.classList);
+        };
+      };
+
+      function hideTheFront(){
+        document.getElementById("rightFront").style.visibility = "hidden";
+      };
+      function showTheFront(){
+        document.getElementById("rightFront").style.visibility = "visible";
+      };
+
+      let rightPage2 = document.getElementById("rightPage2");
+    });
+
+    /////////////////////////IF THE MEDIA QUERY BECOMES PHONE///////////
+    document.addEventListener("DOMContentLoaded", function() {
+      let page1 = document.getElementById("leftPage");
+      let page2 = document.getElementById("rightFront");
+      let page3 = document.getElementById("rightBack");
+      let page4 = document.getElementById("rightPage2");
+
+      if(window.matchMedia("(max-width: 520px)").matches){
+        let nextButton = document.createElement("button");
+        nextButton.textContent = "Next Page";
+        nextButton.addEventListener("click", flipPage);
+        nextButton.classList.add("nextButton");
+        document.querySelector(".book").appendChild(nextButton);
+        console.log("working");
+      }
+
+      function flipPage(){
+        if (!page1.classList.contains("flipCheck")){
+          page1.style.transform = "rotateY(-180deg)";
+          page1.classList.add("flipCheck");
+        }else if (!page2.classList.contains("flipCheck")){
+          page2.style.transform = "rotateY(-180deg)";
+          page2.classList.add("flipCheck");
+        }else if (!page3.classList.contains("flipCheck")){
+          page3.style.transform = "rotateY(-180deg)";
+          page3.classList.add("flipCheck");
+        }else if (!page4.classList.contains("flipCheck")){
+          page4.style.transform = "rotateY(-180deg)";
+          page4.classList.add("flipCheck");
+        }
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <main>
+    <div class="book">
+
+      <div id="leftPage">
+        <div class="leftContent">
+          <h2>Hi! Got anything to say?</h2>
+          <p>
+          Think I missed anything in the essentials book?
+          </p>
+          <p>
+          Should I try a new recipe??
+          </p>
+          <p>
+          Send it over and I'll try it out!!! I'll add it to the book once I try it. :)
+          </p>
+        </div>
+      </div>
+        
+      <div id="rightPage1">
+        <div id="rightFront">
+          <h2>Write it here!</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="navBooks">
+      <nav class = "navSettings">
+            <a id="home" href="../index.html">Home</a>
+            <a id="essentials" href="essentials.html">Essentials</a>
+            <!-- <a id="contact" href="contact.html">Contact</a> -->
+            <a id="recipes" href="recipes.html">Recipes</a>
+        </nav>
+      </div>
+  </main>
+      <hr class="shelf"> <!--Bottom shelf books are sitting on -->
+
+  <footer>
+  </footer>
+</body>
+</html>

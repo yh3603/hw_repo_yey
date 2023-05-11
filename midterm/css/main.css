@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-/*Default Styles*/
+/*Default Styles*/ 
 html, body {
 	margin: 0;
 	background-color: #09182eff;
@@ -21,7 +21,7 @@ header, footer{
 
 
 /*Phone Media Query Section*/
-@media (min-width:320px) { 
+@media (max-width:320px) { 
 
 /*///////////////////I'm starting new code here////////////////*/
 /*nav section css*/

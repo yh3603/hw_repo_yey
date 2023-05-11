@@ -1,0 +1,44 @@
+javascript
+
+if(the book = book 1){
+	.book background color = color of the book it's on
+}
+
+if the book is hovered on, then make the ones on top float above it
+^ try to use javascript for this maybe?
+
+figure out how to make it flip to the next page once you actually click it
+
+phone version---
+make the entire page one book
+make a hamburger and write that it's cause I felt i wasn't putting enough extra stuff into my webpage and needed to add something extra
+
+
+NEED TO DO---
+- Make the words on the books a different color
+- Make the red book a book that's easier to read (look up the spines of books)
+- Change the size of the recipe book
+
+RED BOOK PAGE---
+- The entire page will be bigger than the other books
+- Table of contents will be what recipes are in it
+- If a certain recipe is clicked maybe make it flip to there?
+	- Look up how to do a flipping animation
+- And then there's a tab that will take you back to the table of contents?
+	-if(the page isn't on the first page){
+	make a tab that will appear on the top left side saying (table of contents)
+	}
+
+
+	.backleftpage
+		if (it's the first page of the book){
+		backleftpage background-color = background color of the book;
+		}
+
+
+--making the page turn if I click on it
+if (i clik the page){
+	if (whatever the page is == the page number){}
+	make the y axis rotation go 100%
+}
+see somehow what the page number is and make it go up everytime the page flips right, if it flips backwards then the value is -1 or whatever.

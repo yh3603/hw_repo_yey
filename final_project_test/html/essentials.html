@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cooking Website FP</title>
+  <link rel="stylesheet" type="text/css" href="../css/essentials.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam&family=Edu+TAS+Beginner:wght@600&family=Ysabeau&display=swap">
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      let rightPage = document.getElementById("rightPage1");
+      let leftPage = document.getElementById("leftPage");
+      rightPage.addEventListener("click", flipRightPage);
+      // leftPage.addEventListener("click", flipLeftPage);
+      
+      function flipRightPage(){
+        if (!rightPage.classList.contains("flipCheck")){
+          rightPage.style.transform = "rotateY(-180deg)";
+          rightPage.classList.add("flipCheck");
+          leftPage.style.pointerEvents = "none";
+          rightPage.addEventListener("transitionend", hideTheFront);
+          console.log(rightPage.classList);
+        }else{
+          rightPage.style.transform = "none";
+          rightPage.classList.remove("flipCheck");
+          rightPage.addEventListener("transitionend", showTheFront);
+          console.log(rightPage.classList);
+        };
+      };
+
+      function hideTheFront(){
+        document.getElementById("rightFront").style.visibility = "hidden";
+      };
+      function showTheFront(){
+        document.getElementById("rightFront").style.visibility = "visible";
+      };
+
+      let rightPage2 = document.getElementById("rightPage2");
+    });
+
+    /////////////////////////IF THE MEDIA QUERY BECOMES PHONE///////////
+    document.addEventListener("DOMContentLoaded", function() {
+      let page1 = document.getElementById("leftPage");
+      let page2 = document.getElementById("rightFront");
+      let page3 = document.getElementById("rightBack");
+      let page4 = document.getElementById("rightPage2");
+
+      if(window.matchMedia("(max-width: 520px)").matches){
+        let nextButton = document.createElement("button");
+        nextButton.textContent = "Next Page";
+        nextButton.addEventListener("click", flipPage);
+        nextButton.classList.add("nextButton");
+        document.querySelector(".book").appendChild(nextButton);
+        console.log("working");
+      }
+
+      function flipPage(){
+        if (!page1.classList.contains("flipCheck")){
+          page1.style.transform = "rotateY(-180deg)";
+          page1.classList.add("flipCheck");
+        }else if (!page2.classList.contains("flipCheck")){
+          page2.style.transform = "rotateY(-180deg)";
+          page2.classList.add("flipCheck");
+        }else if (!page3.classList.contains("flipCheck")){
+          page3.style.transform = "rotateY(-180deg)";
+          page3.classList.add("flipCheck");
+        }else if (!page4.classList.contains("flipCheck")){
+          page4.style.transform = "rotateY(-180deg)";
+          page4.classList.add("flipCheck");
+        }
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <main>
+    <div class="book">
+
+      <div id="leftPage">
+        <div class="leftContent">
+          <h2>Welcome to the Essentials!</h2>
+          <p>
+            These are things I personally have always had and believe are things that everyone should have when living anywhere as a minimum.
+          </p>
+          <img src="../images/food-group.jpg">
+          <p class="note">
+            I will say though, make sure you try to eat healthy and get all of your food groups in your daily diet!
+          </p>
+        </div>
+      </div>
+        
+      <div id="rightPage1">
+        <div id="rightFront">
+          <h2>Utensil Essentials</h2>
+          <ul>
+            <li>Pan</li>
+            <li>Pot</li>
+            <li>Chopsticks</li>
+            <li>One big knife (that can handle everything if you can get your hands on one)</li>
+            <li>At least one bowl</li>
+            <li>At least two containers (cause if you make pasta you don't want your noodles getting soggy</li>
+          </ul>
+          <img src="../images/utensils.jpg">
+        </div>
+
+        <div id="rightBack">
+          <h2>Spice Essentials</h2>
+          <ul>
+            <li>Salt</li>
+            <li>Pepper</li>
+            <li>Adobo</li>
+            <li>All purpose-seasoning</li>
+            <li>Oil</li>
+            <li>Hot Sauce</li>
+          </ul>
+          <p>
+          Okay...I admit some of these aren't spices, but I don't know what category to put them under.
+          </p>
+          <p>
+          Sidenote: A staple that I never NOT have in my pantry is HOT SAUCE. It's amazing. End of story.
+          </p>
+          <img src="../images/hot-sauce.jpg">
+        </div>
+      </div>
+
+<!-- The Cooking page (3rd page) -->
+      <div id="rightPage2">
+        <div class="rightFront2">
+          <h2>Ingredient Essentials</h2>
+          <ol>
+            <li>Any type of meat</li>
+            <li>Rice hehehehehehhe</li>
+            <li>Bread</li>
+            <li>Simple Veggies (Carrots, lettuce, etc.)</li>
+            <li>Fruits (if you can afford it haha)</li>
+            <li>cheese</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="navBooks">
+      <nav class = "navSettings">
+            <a id="home" href="../index.html">Home</a>
+            <!-- <a id="essentials" href="essentials.html">Essentials</a> -->
+            <a id="contact" href="contact.html">Contact</a>
+            <a id="recipes" href="recipes.html">Recipes</a>
+        </nav>
+      </div>
+  </main>
+      <hr class="shelf"> <!--Bottom shelf books are sitting on -->
+
+  <footer>
+  </footer>
+</body>
+</html>

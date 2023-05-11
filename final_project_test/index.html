@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cooking Website FP</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam&family=Edu+TAS+Beginner:wght@600&display=swap">
+
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function() {
+			let rightPage = document.getElementById("rightPage1");
+			let leftPage = document.getElementById("leftPage");
+			rightPage.addEventListener("click", flipRightPage);
+			// leftPage.addEventListener("click", flipLeftPage);
+			
+			function flipRightPage(){
+				if (!rightPage.classList.contains("flipCheck")){
+					rightPage.style.transform = "rotateY(-180deg)";
+					rightPage.classList.add("flipCheck");
+					leftPage.style.pointerEvents = "none";
+					rightPage.addEventListener("transitionend", hideTheFront);
+					console.log(rightPage.classList);
+				}else{
+					rightPage.style.transform = "none";
+					rightPage.classList.remove("flipCheck");
+					rightPage.addEventListener("transitionend", showTheFront);
+					console.log(rightPage.classList);
+				};
+			};
+
+			function hideTheFront(){
+				document.getElementById("rightFront").style.visibility = "hidden";
+			};
+			function showTheFront(){
+				document.getElementById("rightFront").style.visibility = "visible";
+			};
+
+			function flipLeftPage(){
+				if (!leftPage.classList.contains("flipCheck")){
+					leftPage.style.transform = "rotateY(180deg)";
+					leftPage.classList.add("flipCheck");
+					rightPage.style.pointerEvents = "none";
+					leftPage.addEventListener("transitionend", hideTheFront);
+					console.log(leftPage.classList);
+				}else{
+					leftPage.style.transform = "none";
+					leftPage.classList.remove("flipCheck");
+					leftPage.addEventListener("transitionend", showTheFront);
+					console.log(leftPage.classList);
+				};
+			};
+		});
+	</script>
+</head>
+
+<body>
+	<header>
+		<img class="sign" src="images/sign.png">
+		<h1 id="title">A look into a student's recipes</h1>
+	</header>
+
+	<main>
+		<div class="book">
+				
+			<div id="leftPage">
+      			<div class="leftContent">
+      				<h2>Why a cookbook?</h2>
+      				<p>
+					This cookbook is what I have learned over three years of cooking for myself. Sometimes they're amazing recipes that take a lot of time and will cost a few more dollars than I am used to. 
+					</p>
+					<p>
+					But most of the time they're just really easy, cheap, unhealthy, but absolutely delicious recipes that I love.
+					</p>
+					<p>
+					Honestly when I make the few really good recipes that I love it makes me quite happy to share them, but at the same time very upset because I KNOW it's delicious so why would I want to share especially because it was expensive just to buy a small pack of chicken. >:(
+					</p>
+					<p>
+					All written by me! Yoojin Hong :)
+					</p>
+      			</div>
+   			</div>
+    		
+    		<div id="rightPage1">
+      			<div id="rightFront">
+      				<h2>What you're going to see</h2>
+      				<h3>Recipes</h3>
+      				<p>
+      				The recipes book is fairly self-explanatory. These are recipes I have from cooking cheap meals to cooking healthy-ish meals.
+      				</p>
+      				<h3>Essentials</h3>
+      				<p>
+      				I will list some ingredients I personally think are essentials to have on you. Like you can't make anything taste good at all without hot sauce XD.
+      				</p>
+      				<h3>Contact Me</h3>
+      				<p>
+      				Shoot me a quick email if you want to add any recipes though! Anything I can try and then add to the book!
+      				</p>
+      			</div>
+      			<div id="rightBack">
+      				<h2 class="idontknow">Hello and Welcome!! :D</h2>
+      				<p class="idontknow2">
+      				I honestly don't think much of cooking in terms of making things gOURMEt you know?
+      				</p>
+      				<p>
+      				I just cook for the sake of getting something that tastes good in my stomach hehehe.
+      				</p>
+      			</div>
+    		</div>
+
+			<div id="rightPage2">
+				<div class="rightFront2">
+					<h2>Have you ever cooked for children?</h2>
+					<p>
+					I suppose my main motivation for cooking was to make healthy foods for my parents to eat :) 
+					</p>
+					<p>
+					My parents are...kind of like children at this point...They hate eating vegetables unless it's something korean T.T
+					</p>
+					<p>
+					So I had to step up and learn how to cook like mom's do when they have to hide veggies into the food to somehow get kids eating them. Or somehow make it taste amazing (like a smoothie) despite it being healthy.
+					</p>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="navBooks">
+			<nav class = "navSettings">
+        		<!-- <a id="home" href="#">Home</a> -->
+      			<a id="essentials" href="html/essentials.html">Essentials</a>
+      			<a id="contact" href="html/contact.html">Contact</a>
+      			<a id="recipes" href="html/recipes.html">Recipes</a>
+     		</nav>
+     	</div>
+	</main>
+      <hr class="shelf"> <!--Bottom shelf books are sitting on -->
+
+	
+
+
+	<footer>
+	</footer>
+</body>
+</html>

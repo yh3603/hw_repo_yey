@@ -1,0 +1,652 @@
+
+* {
+  box-sizing: border-box;
+}
+
+/*Default Styles*/
+html, body{
+  background-image: url('../images/background.jpg');
+  background-repeat: none;
+  background-size: contain;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  color: #86A137;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*Phone Media Query Section*/
+@media (max-width:320px){ 
+
+.book{
+  font-family: Ysabeau;
+  background-color: #B35900;
+  position: relative;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+/*  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);*/
+  border-radius: 5px;
+}
+
+/*-------------Left Page--------------*/
+
+#leftPage{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  width: calc(100% - 20px);
+
+  transform-origin: left center;
+  transition: transform 1s;
+  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.1), -5px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 4;
+}
+
+.leftContent{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  overflow: auto;
+  line-height: 1.4;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+/*-------------Right Page 1--------------*/
+#rightPage1{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  width: calc(100% - 20px);
+
+  transform-origin: left center;
+  transition: transform 1s ease;
+  box-shadow: -5px 0 5px rgba(0, 0, 0, 0.1), 5px 0 5px rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d; /*This ads a back face */
+}
+
+#rightFront {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  overflow: auto;
+  line-height: 1.4;
+  z-index: 3;
+  visibility: visible;
+  text-align: center;
+}
+
+#rightBack {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  overflow: auto;
+  line-height: 1.4;
+  z-index: 2;
+  text-align: center;
+}
+
+.flipCheck{
+}
+
+/*-------------Right Page 2--------------*/
+
+#rightPage2{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  width: calc(100% - 20px);
+  box-shadow: -5px 0 5px rgba(0, 0, 0, 0.1), 5px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.rightFront2{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 0px;
+  right: 10px;
+  background-color: #F5F5F5;
+  overflow: auto;
+  line-height: 1.4;
+}
+
+h2{
+  color: #004E66;
+  font-size: 26px;
+  text-align: center;
+  width: 100%;
+/*  margin-top: 35px;*/
+}
+
+h3{
+  color: #0088B3;
+}
+
+p{
+  color: #663300;
+  font-size: 16px;
+  text-indent: 20px;
+}
+
+.navBooks{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navSettings{
+  padding-top: 90px;
+  display: flex;
+  width: 60vw;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  vertical-align: center;
+}
+
+.navSettings a{
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 20px;
+}
+
+.navSettings a:hover{
+  color: #f5f5f5;  
+  transition: transform 1s ease;
+  transform: translateX(20px);
+}
+
+.navSettings a:active{
+  color: #f5f5f5;
+}
+
+#home, #recipes, #contact, #essentials{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 6px;
+  height: auto;
+}
+
+#home{ /*Home Book*/
+  background-color: #B35900;
+  border-color: #994D00;
+  width: 95vw;
+}
+
+#essentials{ /*Essentials Book*/
+  background-color: #1f6357;
+  border-color: #1B574C;
+  width: 80vw;
+  padding: 8px;
+}
+
+#contact{ /*Contact Book*/
+  background-color: #6699CC;
+  border-color: #5B88B5;
+  width: 95vw;
+}
+
+#recipes{ /*Recipes Book*/
+  background-color: #8B0000;
+  border-color: #7D0000;
+  width: 90vw;
+  padding: 20px;
+}
+
+.shelf{
+  display: block;
+  border-style: solid;
+  border-color: saddlebrown;
+  border-width: 10px;
+  margin: 0px;
+}
+
+/*------------Stuff for each page--------------*/
+.foodTitle{
+  color: #004E66;
+  font-size: 34px;
+  text-align: center;
+  width: 75%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+img{
+  width: auto;
+  height: 72%;
+}
+
+ul, ol{
+  text-align: left;
+  color: black;
+}
+
+.leftContent p{
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+
+.leftContent ol li{
+  margin-left: 25vw;
+  margin-top: 20px;
+  font-size: 26px;
+
+}
+
+#rightBack h2, .rightFront2 h2{
+  margin-top: 10px;
+}
+
+.rightFront2 ol{
+  font-size: 13px;
+}}
+
+
+
+
+
+
+
+/*-------------Laptop Media Query Section-----------------*/
+@media (min-width: 961px){ 
+
+.book{
+  font-family: Ysabeau;
+  background-color: #B35900;
+  position: relative;
+  margin: auto;
+  margin-top: 20px;
+  width: 50vw;
+  height: calc(50vw * (3/4));
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/*-------------Left Page--------------*/
+
+#leftPage{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  background-color: #F5F5F5;
+  width: calc(50% - 10px);
+
+  transform-origin: right center;
+  transition: transform 1s;
+  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.1), -5px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.leftContent{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  overflow: auto;
+  line-height: 1.4;
+}
+
+/*-------------Right Page 1--------------*/
+#rightPage1{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  width: calc(50% - 10px);
+
+  transform-origin: left center;
+  transition: transform 1s ease;
+  box-shadow: -5px 0 5px rgba(0, 0, 0, 0.1), 5px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  transform-style: preserve-3d; /*This ads a back face */
+}
+
+#rightFront {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  overflow: auto;
+  line-height: 1.4;
+  z-index: 4;
+  visibility: visible;
+  text-align: center;
+}
+
+#rightBack {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  transform: rotateY(-180deg);
+  overflow: auto;
+  line-height: 1.4;
+  z-index: 3;
+  text-align: center;
+}
+
+.flipCheck{
+}
+
+/*-------------Right Page 2--------------*/
+
+#rightPage2{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  width: calc(50% - 10px);
+  box-shadow: -5px 0 5px rgba(0, 0, 0, 0.1), 5px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.rightFront2{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 0px;
+  right: 10px;
+  background-color: #F5F5F5;
+  overflow: auto;
+  line-height: 1.4;
+}
+
+
+.book{
+  font-family: Kalam;
+  background-color: #B35900;
+  position: relative;
+  margin: auto;
+  margin-top: 20px;
+  width: 50vw;
+  height: calc(50vw * (3/4));
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/*-------------Left Page--------------*/
+
+#leftPage{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  background-color: #F5F5F5;
+  width: calc(50% - 10px);
+
+  transform-origin: right center;
+  transition: transform 1s;
+  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.1), -5px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.leftContent{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  overflow: auto;
+  line-height: 1.4;
+}
+
+/*-------------Right Page 1--------------*/
+#rightPage1{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  width: calc(50% - 10px);
+
+  transform-origin: left center;
+  transition: transform 1s ease;
+  box-shadow: -5px 0 5px rgba(0, 0, 0, 0.1), 5px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  transform-style: preserve-3d; /*This ads a back face */
+}
+
+#rightFront {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  overflow: auto;
+  line-height: 1.4;
+  z-index: 4;
+  visibility: visible;
+}
+
+#rightBack {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  transform: rotateY(-180deg);
+  overflow: auto;
+  line-height: 1.4;
+  z-index: 3;
+  text-align: center;
+}
+
+.idontknow{
+  font-size: 40px;
+  width: 75%;
+  height: auto;
+  text-align: center;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.idontknow2{
+  font-size: 24px;
+  width: 75%;
+  height: auto;
+  text-align: center;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.flipCheck{
+}
+
+/*-------------Right Page 2--------------*/
+
+#rightPage2{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
+  background-color: #F5F5F5;
+  width: calc(50% - 10px);
+  box-shadow: -5px 0 5px rgba(0, 0, 0, 0.1), 5px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.rightFront2{
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 12px;
+  right: 10px;
+  background-color: #F5F5F5;
+  overflow: auto;
+  line-height: 1.4;
+}
+
+h2{
+  color: #004E66;
+  font-size: 26px;
+  text-align: center;
+  width: 100%;
+/*  margin-top: 35px;*/
+}
+
+h3{
+  color: #0088B3;
+}
+
+p{
+  color: #663300;
+  font-size: 16px;
+  text-indent: 20px;
+}
+
+.navBooks{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navSettings{
+  padding-top: 90px;
+  display: flex;
+  width: 60vw;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  vertical-align: center;
+}
+
+.navSettings a{
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 20px;
+}
+
+.navSettings a:hover{
+  color: #f5f5f5;  
+  transition: transform 1s ease;
+  transform: translateX(20px);
+}
+
+.navSettings a:active{
+  color: #f5f5f5;
+}
+
+#home, #recipes, #contact, #essentials{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 6px;
+  height: auto;
+}
+
+#home{ /*Home Book*/
+  background-color: #B35900;
+  border-color: #994D00;
+  width: 290px;
+}
+
+#essentials{ /*Essentials Book*/
+  background-color: #1f6357;
+  border-color: #1B574C;
+  width: 300px;
+  padding: 8px;
+}
+
+#contact{ /*Contact Book*/
+  background-color: #6699CC;
+  border-color: #5B88B5;
+  width: 400px;
+}
+
+#recipes{ /*Recipes Book*/
+  background-color: #8B0000;
+  border-color: #7D0000;
+  width: 500px;
+  padding: 20px;
+}
+
+.shelf{
+  display: block;
+  border-style: solid;
+  border-color: saddlebrown;
+  border-width: 10px;
+  margin: 0px;
+}
+
+/*------------Stuff for each page--------------*/
+.foodTitle{
+  color: #004E66;
+  font-size: 34px;
+  text-align: center;
+  width: 75%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+img{
+  width: auto;
+  height: 72%;
+}
+
+ul, ol{
+  text-align: left;
+  color: black;
+}
+
+.leftContent p{
+  font-size: 16px;
+}
+
+.leftContent ol li{
+  margin-top: 18px;
+  font-size: 26px;
+
+}
+
+#rightBack h2, .rightFront2 h2{
+  margin-top: 10px;
+}
+
+.rightFront2 ol{
+  font-size: 13px;
+}}

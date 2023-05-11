@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cooking Website FP</title>
+  <link rel="stylesheet" type="text/css" href="../css/recipes.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam&family=Edu+TAS+Beginner:wght@600&family=Ysabeau&display=swap">
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      let rightPage = document.getElementById("rightPage1");
+      let leftPage = document.getElementById("leftPage");
+      rightPage.addEventListener("click", flipRightPage);
+      // leftPage.addEventListener("click", flipLeftPage);
+      
+      function flipRightPage(){
+        if (!rightPage.classList.contains("flipCheck")){
+          rightPage.style.transform = "rotateY(-180deg)";
+          rightPage.classList.add("flipCheck");
+          leftPage.style.pointerEvents = "none";
+          rightPage.addEventListener("transitionend", hideTheFront);
+          console.log(rightPage.classList);
+        }else{
+          rightPage.style.transform = "none";
+          rightPage.classList.remove("flipCheck");
+          rightPage.addEventListener("transitionend", showTheFront);
+          console.log(rightPage.classList);
+        };
+      };
+
+      function hideTheFront(){
+        document.getElementById("rightFront").style.visibility = "hidden";
+      };
+      function showTheFront(){
+        document.getElementById("rightFront").style.visibility = "visible";
+      };
+
+      let rightPage2 = document.getElementById("rightPage2");
+    });
+
+    /////////////////////////IF THE MEDIA QUERY BECOMES PHONE///////////
+    document.addEventListener("DOMContentLoaded", function() {
+      let page1 = document.getElementById("leftPage");
+      let page2 = document.getElementById("rightFront");
+      let page3 = document.getElementById("rightBack");
+      let page4 = document.getElementById("rightPage2");
+
+      if(window.matchMedia("(max-width: 520px)").matches){
+        let nextButton = document.createElement("button");
+        nextButton.textContent = "Next Page";
+        nextButton.addEventListener("click", flipPage);
+        nextButton.classList.add("nextButton");
+        document.querySelector(".book").appendChild(nextButton);
+        console.log("working");
+      }
+
+      function flipPage(){
+        if (!page1.classList.contains("flipCheck")){
+          page1.style.transform = "rotateY(-180deg)";
+          page1.classList.add("flipCheck");
+        }else if (!page2.classList.contains("flipCheck")){
+          page2.style.transform = "rotateY(-180deg)";
+          page2.classList.add("flipCheck");
+        }else if (!page3.classList.contains("flipCheck")){
+          page3.style.transform = "rotateY(-180deg)";
+          page3.classList.add("flipCheck");
+        }else if (!page4.classList.contains("flipCheck")){
+          page4.style.transform = "rotateY(-180deg)";
+          page4.classList.add("flipCheck");
+        }
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <main>
+    <div class="book">
+
+      <div id="leftPage">
+        <div class="leftContent">
+          <h2>My List of Recipes!</h2>
+          <p>It's short but I'm getting there :') She's growing.</p>
+          <ol>
+            <li>Non-Vegetarian Curry</li>
+            <li>Korean Sausages</li>
+            <li>Roasted Potatos</li>
+            <li>Pasta</li>
+            <li>Mashed Potatoes</li>
+            <li>Tacos</li>
+            <li>Shredded Chicken</li>
+          </ol>
+        </div>
+      </div>
+        
+      <div id="rightPage1">
+        <div id="rightFront">
+          <h2 class="foodTitle">Non-Vegetarian Curry</h2>
+          <img src="../images/japanese-curry.jpg">
+        </div>
+
+        <div id="rightBack">
+          <h2>Ingredients</h2>
+          <ul>
+            <li>2 Onions</li>
+            <li>4 Yukon Gold Potatos</li>
+            <li>2 Big Carrots</li>
+            <li>1.5 Pounds of Chicken Thighs</li>
+            <li>Garlic</li>
+            <li>Oil</li>
+            <li>Curry Powder</li>
+            <li>Flour</li>
+            <li>Vietnamese Peppers</li>
+            <li>Salt & Pepper</li>
+            <li>Sesame Oil (or any oil you have is fine)</li>
+          </ul>
+          <p>
+          Not all of these ingredients need to be specifically acquired, whatever you have on hand is fine too. Even if you only have like one onion that's fine too. Everything is to taste! So however much of anything you want is fine.
+          </p>
+          <p>
+          Especially the meat. Like...My family is definitely not vegetarian so add whatever you have on you! XD
+          </p>
+        </div>
+      </div>
+
+<!-- The Cooking page (3rd page) -->
+      <div id="rightPage2">
+        <div class="rightFront2">
+          <h2>Cooking</h2>
+          <ol>
+            <li>Debone the chicken thighs (if you know how to)</li>
+            <li>Cut onions, potatoes, and carrots into bite-size pieces</li>
+            <li>Soak the potato pieces in water for 15 min to get rid of excess starch</li>
+            <li>Mince Garlic (unless you have already minced garlic)</li>
+            <li>Heat up oil in pan and put the garlic and onions in (stir until the onions are slightly translucent</li>
+            <li>Add in the potatoes and carrots until they start sweating</li>
+            <li>Then add the chicken until the outside is just slightly cooked</li>
+            <li>Add water (enough to just barely cover all the ingredients in the pot</li>
+            <li>Add in the spicy vietnamese peppers (if you like it extra spicy)</li>
+            <li>When the water is boiling, slowly stir the curry powder into the pot (however much you want, if you like a stronger taste then you'd add more)</li>
+            <li>If the water has reduced too much, add more and then add more curry powder to balance</li>
+            <li>Slowly stir tiny pinches of flour to thicken (the curry is boiling so the consistently will be more liquidy than when it cools down so be careful)</li>
+            <li>Add salt and pepper to taste</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="navBooks">
+      <nav class = "navSettings">
+            <a id="home" href="../index.html">Home</a>
+            <a id="essentials" href="essentials.html">Essentials</a>
+            <a id="contact" href="contact.html">Contact</a>
+            <!-- <a id="recipes" href="html/recipes.html">Recipes</a> -->
+        </nav>
+      </div>
+  </main>
+      <hr class="shelf"> <!--Bottom shelf books are sitting on -->
+
+  <footer>
+  </footer>
+</body>
+</html>
